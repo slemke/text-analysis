@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Text Analytics</title>
+
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" rel="stylesheet" />
+        <link href="css/style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <section class="analytics">
+            <header class="analytics__header">
+                <h1>Text Analytics</h1>
+                <p>
+                    Enter your text in the textfield. The stats update after input. This demo works only with english text.
+                </p>
+            </header>
+            <div class="analytics__data">
+                <section class="analytics__content">
+                    <nav class="toolbar">
+                        <div class="toolbar__group">
+                            <button type="button" class="toolbar__button" id="toolbar__stopwords">Toggle Stopwords</button>
+                        </div>
+                    </nav>
+                    <article class="analytics__input" id="text" contenteditable="true">
+                        <p>
+                            In literary theory, a text is any object that can be "read", whether this object is a work of literature, a street sign, an arrangement of buildings on a city block, or styles of clothing. It is a coherent set of signs that transmits some kind of informative message. This set of symbols is considered in terms of the informative message's content, rather than in terms of its physical form or the medium in which it is represented.
+                        </p>
+                        <p>
+                            Within the field of literary criticism, "text" also refers to the original information content of a particular piece of writing; that is, the "text" of a work is that primal symbolic arrangement of letters as originally composed, apart from later alterations, deterioration, commentary, translations, paratext, etc. Therefore, when literary criticism is concerned with the determination of a "text", it is concerned with the distinguishing of the original information content from whatever has been added to or subtracted from that content as it appears in a given textual document (that is, a physical representation of text).
+                        </p>
+                        <p>
+                            Since the history of writing predates the concept of the "text", most texts were not written with this concept in mind. Most written works fall within a narrow range of the types described by text theory. The concept of "text" becomes relevant if and when a "coherent written message is completed and needs to be referred to independently of the circumstances in which it was created."
+                        </p>
+                    </article>
+                </section>
+                <aside class="analytics__stats">
+                    <h2>Stats</h2>
+
+                    <h3>Overall</h3>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>Number of words</td>
+                                <td id="overall-words"></td>
+                            </tr>
+                            <tr>
+                                <td>Number of punctuation marks</td>
+                                <td id="overall-punctuation"></td>
+                            </tr>
+                            <tr>
+                                <td>Number of <dfn title="words without a deeper semantic meaning">stopwords</dfn></td>
+                                <td id="overall-stopwords"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>Average Per Sentence</h3>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>Number of words</td>
+                                <td id="average-words"></td>
+                            </tr>
+                            <tr>
+                                <td>Number of punctuation marks</td>
+                                <td id="average-punctuation"></td>
+                            </tr>
+                            <tr>
+                                <td>Number of <dfn title="words without a deeper semantic meaning">stopwords</dfn></td>
+                                <td id="average-stopwords"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>Top 5 Part of Speech</h3>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td id="pos-tag-1">Nouns</td>
+                                <td id="pos-value-1">0</td>
+                            </tr>
+                            <tr>
+                                <td id="pos-tag-2">Verbs</td>
+                                <td id="pos-value-2">0</td>
+                            </tr>
+                            <tr>
+                                <td id="pos-tag-3">Adjectives</td>
+                                <td id="pos-value-3">0</td>
+                            </tr>
+                            <tr>
+                                <td id="pos-tag-4">Adverb</td>
+                                <td id="pos-value-4">0</td>
+                            </tr>
+                            <tr>
+                                <td id="pos-tag-5">Preposition</td>
+                                <td id="pos-value-5">0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h3>Other Stats</h3>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td><dfn title="Number of different words in the text">Vocabulary</dfn></td>
+                                <td id="vocabulary"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <footer class="analytics__footer">
+                        This demo is using <a href="https://github.com/spencermountain/compromise">compromise.js</a>.<br />
+                        The example text is from <a href="https://en.wikipedia.org/wiki/Text_(literary_theory)">Wikipedia</a>.<br />
+                        List of <a href="http://www.lextek.com/manuals/onix/stopwords1.html">stopwords</a>
+                    </footer>
+                </aside>
+            </div>
+        </section>
+        <script src="https://unpkg.com/compromise@11.14.3/builds/compromise.min.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
